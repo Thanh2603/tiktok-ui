@@ -11,7 +11,6 @@ import {
     faEarthAsia,
     faCircleQuestion,
     faKeyboard,
-    faCloudUpload,
     faUser,
     faCoins,
     faGear,
@@ -25,6 +24,8 @@ import { Wrapper as PopperWrapper } from '../../../Popper';
 import Button from '../../../Button';
 import AccountItem from '../../../AccountItem';
 import Menu from '../../../Popper/Menu';
+import { InboxIcon, MessageIcon, UploadIcon } from '../../../Icons/index';
+import Image from '../../../Image/index';
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -136,7 +137,9 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload Video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
+                                    <MessageIcon />
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -148,10 +151,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
                                 className={cx('user-avatar')}
                                 alt="NguyenVanA"
+                                // fallback="https://files.fullstack.edu.vn/f8-prod/user_photos/191762/62518fafea517.jpg"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
