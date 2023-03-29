@@ -7,9 +7,12 @@
     }
 }
 .menu-popper {
-    display: flex;
+    // display: flex;
     padding-bottom: 8px;
     // align-items: center;
+}
+.menu-body {
+    overflow-y: auto;
 }
 // Menu items
 .menu-item {
@@ -31,6 +34,7 @@
     position: relative;
     height: 50px;
     margin-top: -8px;
+    flex-shrink: 0;
 }
 .back-btn {
     width: 50px;
